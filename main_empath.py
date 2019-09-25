@@ -12,7 +12,7 @@ chunk = 1024  # Record in chunks of 1024 samples
 sample_format = pyaudio.paInt16  # 16 bits per sample
 channels = 1
 fs = 11025  # Record at 44100 samples per second
-seconds = 4
+seconds = 2
 frames = []  # Initialize array to store audio frames
 p = pyaudio.PyAudio()  # Create an interface to PortAudio
 stream = p.open(format=sample_format,
@@ -69,11 +69,11 @@ def webempath_request():
     else:
         print("ERROR")
 
-if __name__ == "__main_" :
-    while True:
-        recording()
-        result = webempath_request()
-        # Reset the frame for next recording:
-        frames = []
-        #
-        print(result)
+# if __name__ == "__main__":
+while True:
+    recording()
+    result = webempath_request()
+    # Reset the frame for next recording:
+    frames = []
+    #
+    print(result)
